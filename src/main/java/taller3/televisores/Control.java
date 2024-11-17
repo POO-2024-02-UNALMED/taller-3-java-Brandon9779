@@ -2,7 +2,7 @@ package taller3.televisores;
 
 public class Control {
     public TV tv;
-    
+
     public Control(){
         this.tv = null;
     }
@@ -21,35 +21,51 @@ public class Control {
         System.out.println("El control remoto se ha enlazado con el televisor.");
     }
 
-    public void setCanal(int canal){
-        tv.setCanal(canal);
-    }
-
-    public void setVolumen(int volumen){
-        tv.setVolumen(volumen);
-    }
-
-    public void turnOff(){
-        tv.turnOff();
-    }
-
-    public void turnOn(){
-        tv.turnOn();
-    }
-
     public void canalUp(){
-        tv.canalUp();
+        if (tv != null && tv.getEstado()) {
+            tv.canalUp();
+        } else {
+            System.out.println("El televisor no está encendido o no está enlazado.");
+        }
     }
 
     public void canalDown(){
-        tv.canalDown();
+        if (tv != null && tv.getEstado()) {
+            tv.canalDown();
+        } else {
+            System.out.println("El televisor no está encendido o no está enlazado.");
+        }
     }
 
     public void volumenUp(){
-        tv.volumenUp();
+        if (tv != null && tv.getEstado()) {
+            tv.volumenUp();
+        } else {
+            System.out.println("El televisor no está encendido o no está enlazado.");
+        }
     }
 
     public void volumenDown(){
-        tv.volumenDown();
+        if (tv != null && tv.getEstado()) {
+            tv.volumenDown();
+        } else {
+            System.out.println("El televisor no está encendido o no está enlazado.");
+        }
+    }
+
+    public void turnOff(){
+        if (tv != null) {
+            tv.turnOff();
+        } else {
+            System.out.println("El televisor no está enlazado.");
+        }
+    }
+
+    public void turnOn(){
+        if (tv != null) {
+            tv.turnOn();
+        } else {
+            System.out.println("El televisor no está enlazado.");
+        }
     }
 }
