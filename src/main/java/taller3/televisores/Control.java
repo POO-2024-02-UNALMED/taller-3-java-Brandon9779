@@ -8,7 +8,7 @@ public class Control {
     }
 
     public void setTv(TV tv){
-        return;
+        this.tv = tv;
     }
 
     public TV getTv(){
@@ -16,44 +16,40 @@ public class Control {
     }
 
     public void enlazar(TV televisor){
-        televisor = tv;
+        this.tv = televisor;
         televisor.setControl(this);
         System.out.println("El control remoto se ha enlazado con el televisor.");
     }
 
     public void setCanal(int canal){
-        return;
+        tv.setCanal(canal);
     }
 
-
-    public void setvolumen(int volumen){
-        return;
+    public void setVolumen(int volumen){
+        tv.setVolumen(volumen);
     }
 
     public void turnOff(){
-        turnOff();
+        tv.turnOff();
     }
 
     public void turnOn(){
-        turnOn();
+        tv.turnOn();
     }
 
     public void canalUp(){
-        canalUp();
+        tv.canalUp();
     }
 
     public void canalDown(){
-        canalDown();
-
+        tv.canalDown();
     }
 
     public void volumenUp(){
-        volumenUp();
-
+        tv.volumenUp();
     }
 
     public void volumenDown(){
-        volumenDown();
+        tv.volumenDown();
     }
-    
 }
