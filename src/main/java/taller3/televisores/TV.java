@@ -78,7 +78,6 @@ public class TV {
         System.out.println("El televisor esta encendido");
     }
 
-    // Métodos para cambiar de canal
     public void canalUp(){
         if (estado){
             if (canal < 120){
@@ -104,8 +103,7 @@ public class TV {
             System.out.println("El televisor esta apagado");
         }
     }
-
-    // Métodos para ajustar el volumen
+    
     public void volumenUp(){
         if (estado){
             if (volumen < 100){
