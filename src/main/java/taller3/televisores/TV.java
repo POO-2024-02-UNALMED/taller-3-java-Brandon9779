@@ -7,12 +7,12 @@ public class TV {
     public boolean estado;
     public int volumen = 1;
     public Control control;
-    public static int NumTV = 0; 
+    public static int NumTV = 0;
 
     public TV(Marca marca, boolean estado){
         this.marca = marca;
         this.estado = estado;
-        NumTV++;  
+        NumTV++;
     }
 
     public int getCanal(){
@@ -20,7 +20,9 @@ public class TV {
     }
 
     public void setCanal(int canal){
-        this.canal = canal;
+        if (estado && canal >= 1 && canal <= 120) {
+            this.canal = canal;
+        }
     }
 
     public Marca getMarca(){
@@ -36,7 +38,9 @@ public class TV {
     }
 
     public void setVolumen(int volumen){
-        this.volumen = volumen;
+        if (estado && volumen >= 0 && volumen <= 100) {
+            this.volumen = volumen;
+        }
     }
 
     public int getPrecio(){
@@ -60,13 +64,8 @@ public class TV {
     }
 
     public static int getNumTV(){
-        return NumTV;  
+        return NumTV;
     }
-
-    public  static int setNumTV(int NumTV){
-        return TV.NumTV = NumTV;
-    }
-
 
     public void turnOff(){
         estado = false;
@@ -103,7 +102,7 @@ public class TV {
             System.out.println("El televisor esta apagado");
         }
     }
-    
+
     public void volumenUp(){
         if (estado){
             if (volumen < 100){
