@@ -12,6 +12,7 @@ public class TV {
     public TV(Marca marca, boolean estado){
         this.marca = marca;
         this.estado = estado;
+        NumTV++;  
     }
 
     public int getCanal(){
@@ -58,13 +59,14 @@ public class TV {
         return estado;
     }
 
-    public static void setNumTV(int NumTV){
-        TV.NumTV = NumTV;
+    public static int getNumTV(){
+        return NumTV;  
     }
 
-    public static int getNumTV(){
-        return NumTV;
+    public  static int setNumTV(int NumTV){
+        return TV.NumTV = NumTV;
     }
+
 
     public void turnOff(){
         estado = false;
@@ -76,6 +78,7 @@ public class TV {
         System.out.println("El televisor esta encendido");
     }
 
+    // Métodos para cambiar de canal
     public void canalUp(){
         if (estado){
             if (canal < 120){
@@ -102,6 +105,7 @@ public class TV {
         }
     }
 
+    // Métodos para ajustar el volumen
     public void volumenUp(){
         if (estado){
             if (volumen < 100){
