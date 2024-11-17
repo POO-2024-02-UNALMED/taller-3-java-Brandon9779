@@ -30,7 +30,7 @@ public class TV {
     }
 
     public void setMarca(Marca marca){
-        return;
+        this.marca = marca;
     }
 
     public int getVolumen(){
@@ -57,7 +57,7 @@ public class TV {
     }
 
     public void setControl(Control control){
-        return;
+        this.control = control;
     }
 
     public boolean getEstado(){
@@ -73,33 +73,66 @@ public class TV {
     }
 
 
-    public void NumerosTv(int NumTV){
-
+    public void turnOff(){
+        estado = false;
+        System.out.println("El televisor esta apagado");
     }
 
-    public void turnOff(boolean estado){
-
-    }
-
-    public void turnOn(boolean estado){
-
+    public void turnOn(){
+        estado = true;
+        System.out.println("El televisor esta encendido");
     }
 
     public void canalUp(int canal){
+        if (estado){
+            if (canal < 120){
+                this.canal++;
+                System.out.println("has subido de canal a:" + canal);
+            } else {
+                System.out.println("el canal esta en el maximo");
+            }
+        } else {
+            System.out.println("El televisor esta apagado");
+        }
 
     }
 
     public void canalDown(int canal){
-
+        if (estado){
+            if (canal > 1){
+                this.canal--;
+                System.out.println("has bajado de canal a:" + canal);
+            } else{
+                System.out.println("El canal esta en el minimo");
+            }
+        } else {
+            System.out.println("el televisor esta apagado");
+        }
     }
 
     public void volumenUp(int volumen){
-
+        if (estado){
+            if (volumen < 100){
+                this.volumen++;
+                System.out.println("Has subido el volumen a:" + volumen);
+            } else{
+                System.out.println("el volumen ya esta al maximo");
+            }
+        } else {
+            System.out.println("El televisor esta apagado");
+        } 
     }
 
     public void volumenDown(int volumen){
-
+        if (estado){
+            if (volumen > 0){
+                this.volumen--;
+                System.out.println("Has bajado el volumen a: " + volumen);
+            } else {
+                System.out.println("El volumen ya esta en el minimo");
+            }
+        } else {
+            System.out.println("El televisor esta apagdo");
+        }
     }
-
-
 }
