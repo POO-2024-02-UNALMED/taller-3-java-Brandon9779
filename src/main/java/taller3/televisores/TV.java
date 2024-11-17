@@ -1,6 +1,5 @@
 package taller3.televisores;
 
-
 public class TV {
     public Marca marca;
     public int canal = 1;
@@ -14,19 +13,17 @@ public class TV {
         this.marca = marca;
         this.estado = estado;
     }
-    
+
     public int getCanal(){
         return canal;
-
     }
 
     public void setCanal(int canal){
-        return;
+        this.canal = canal;
     }
 
     public Marca getMarca(){
         return marca;
-
     }
 
     public void setMarca(Marca marca){
@@ -35,25 +32,22 @@ public class TV {
 
     public int getVolumen(){
         return volumen;
-
     }
 
     public void setVolumen(int volumen){
-        return;
+        this.volumen = volumen;
     }
 
     public int getPrecio(){
         return precio;
-
     }
 
     public void setPrecio(int precio){
-        return;
+        this.precio = precio;
     }
 
     public Control getControl(){
         return control;
-
     }
 
     public void setControl(Control control){
@@ -65,13 +59,12 @@ public class TV {
     }
 
     public static void setNumTV(int NumTV){
-        return;
+        TV.NumTV = NumTV;
     }
 
     public static int getNumTV(){
         return NumTV;
     }
-
 
     public void turnOff(){
         estado = false;
@@ -83,56 +76,55 @@ public class TV {
         System.out.println("El televisor esta encendido");
     }
 
-    public void canalUp(int canal){
+    public void canalUp(){
         if (estado){
             if (canal < 120){
-                this.canal++;
-                System.out.println("has subido de canal a:" + canal);
+                canal++;
+                System.out.println("Has subido de canal a: " + canal);
             } else {
-                System.out.println("el canal esta en el maximo");
+                System.out.println("El canal esta en el maximo");
             }
         } else {
             System.out.println("El televisor esta apagado");
         }
-
     }
 
-    public void canalDown(int canal){
+    public void canalDown(){
         if (estado){
             if (canal > 1){
-                this.canal--;
-                System.out.println("has bajado de canal a:" + canal);
+                canal--;
+                System.out.println("Has bajado de canal a: " + canal);
             } else{
                 System.out.println("El canal esta en el minimo");
             }
         } else {
-            System.out.println("el televisor esta apagado");
+            System.out.println("El televisor esta apagado");
         }
     }
 
-    public void volumenUp(int volumen){
+    public void volumenUp(){
         if (estado){
             if (volumen < 100){
-                this.volumen++;
-                System.out.println("Has subido el volumen a:" + volumen);
+                volumen++;
+                System.out.println("Has subido el volumen a: " + volumen);
             } else{
-                System.out.println("el volumen ya esta al maximo");
+                System.out.println("El volumen ya esta al maximo");
             }
         } else {
             System.out.println("El televisor esta apagado");
-        } 
+        }
     }
 
-    public void volumenDown(int volumen){
+    public void volumenDown(){
         if (estado){
             if (volumen > 0){
-                this.volumen--;
+                volumen--;
                 System.out.println("Has bajado el volumen a: " + volumen);
             } else {
                 System.out.println("El volumen ya esta en el minimo");
             }
         } else {
-            System.out.println("El televisor esta apagdo");
+            System.out.println("El televisor esta apagado");
         }
     }
 }
