@@ -37,13 +37,6 @@ public class Control {
         tv.turnOn();
     }
 
-    public void canalUp(){
-        tv.canalUp();
-    }
-
-    public void canalDown(){
-        tv.canalDown();
-    }
 
     public void volumenUp(){
         tv.volumenUp();
@@ -52,4 +45,21 @@ public class Control {
     public void volumenDown(){
         tv.volumenDown();
     }
+
+    public void canalUp() {
+        if (tv != null && tv.getEstado()) {
+            tv.canalUp(); 
+        } else {
+            System.out.println("El televisor no está encendido o no está enlazado.");
+        }
+    }
+    
+    public void canalDown() {
+        if (tv != null && tv.getEstado()) {
+            tv.canalDown(); 
+        } else {
+            System.out.println("El televisor no está encendido o no está enlazado.");
+        }
+    }
+    
 }
