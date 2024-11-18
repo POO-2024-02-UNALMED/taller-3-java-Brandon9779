@@ -2,6 +2,7 @@ package taller3.televisores;
 
 public class TV {
     public Marca marca;
+    public int precio;
     public int canal = 1;
     public int volumen = 1;
     public boolean estado;
@@ -93,4 +94,13 @@ public class TV {
     public static int getNumTV() {
         return numTV;
     }
+
+    public int setPrecio(int precio) {
+        return this.precio = precio;
+    }
+
+    public  int getPrecio() {
+        return precio;
+    }
+
 }
