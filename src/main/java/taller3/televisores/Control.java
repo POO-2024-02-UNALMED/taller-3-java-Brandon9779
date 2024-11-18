@@ -59,4 +59,8 @@ public class Control {
     public TV getTv() {
         return tv;
     }
+
+    public TV setTv(TV tv) {
+        return tv;
+    }
 }
