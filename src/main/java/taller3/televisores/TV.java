@@ -3,116 +3,94 @@ package taller3.televisores;
 public class TV {
     public Marca marca;
     public int canal = 1;
-    public int precio = 500;
-    public boolean estado;
     public int volumen = 1;
-    public Control control;
-    public static int NumTV = 0; 
+    public boolean estado;
+    public  Control control;
+    public static int numTV;
 
-    public TV(Marca marca, boolean estado){
+    public TV(Marca marca, boolean estado) {
         this.marca = marca;
         this.estado = estado;
-        NumTV++;  
+        numTV++;
     }
 
-    public int getCanal(){
+    public void setCanal(int canal) {
+        if (estado && canal > 0 && canal <= 120) {
+            this.canal = canal;
+        }
+    }
+
+    public int getCanal() {
         return canal;
     }
 
-    public void setCanal(int canal){
-        this.canal = canal;
-    }
-
-    public Marca getMarca(){
-        return marca;
-    }
-
-    public void setMarca(Marca marca){
-        this.marca = marca;
-    }
-
-    public int getVolumen(){
-        return volumen;
-    }
-
-    public void setVolumen(int volumen){
-        this.volumen = volumen;
-    }
-
-    public int getPrecio(){
-        return precio;
-    }
-
-    public void setPrecio(int precio){
-        this.precio = precio;
-    }
-
-    public Control getControl(){
-        return control;
-    }
-
-    public void setControl(Control control){
-        this.control = control;
-    }
-
-    public boolean getEstado(){
-        return estado;
-    }
-
-    public static int getNumTV(){
-        return NumTV;  
-    }
-
-    public  static int setNumTV(int NumTV){
-        return TV.NumTV = NumTV;
-    }
-
-
-    public void turnOff(){
-        estado = false;
-        System.out.println("El televisor esta apagado");
-    }
-
-    public void turnOn(){
-        estado = true;
-        System.out.println("El televisor esta encendido");
-    }
-
     public void canalUp() {
-        if (estado && canal < 120) { 
+        if (estado && canal < 120) {
             canal++;
         }
     }
-    
+
     public void canalDown() {
-        if (estado && canal > 1) { 
+        if (estado && canal > 1) {
             canal--;
         }
     }
-    
-    public void volumenUp(){
-        if (estado){
-            if (volumen < 100){
-                volumen++;
-                System.out.println("Has subido el volumen a: " + volumen);
-            } else{
-                System.out.println("El volumen ya esta al maximo");
-            }
-        } else {
-            System.out.println("El televisor esta apagado");
+
+    public void setVolumen(int volumen) {
+        if (estado && volumen >= 0 && volumen <= 7) {
+            this.volumen = volumen;
         }
     }
 
-    public void volumenDown(){
-        if (estado){
-            if (volumen > 0){
-                volumen--;
-                System.out.println("Has bajado el volumen a: " + volumen);
-            } else {
-                System.out.println("El volumen ya esta en el minimo");
-            }
-        } else {
-            System.out.println("El televisor esta apagado");
+    public int getVolumen() {
+        return volumen;
+    }
+
+    public void volumenUp() {
+        if (estado && volumen < 7) {
+            volumen++;
         }
+    }
+
+    public void volumenDown() {
+        if (estado && volumen > 0) {
+            volumen--;
+        }
+    }
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public void turnOn() {
+        if (!estado) {
+            estado = true;
+        }
+    }
+
+    public void turnOff() {
+        if (estado) {
+            estado = false;
+        }
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
+    }
+
+    public Control getControl() {
+        return control;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public static void setNumTV(int numTV) {
+        TV.numTV = numTV;
+    }
+
+    public static int getNumTV() {
+        return numTV;
     }
 }
