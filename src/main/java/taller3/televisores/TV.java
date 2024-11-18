@@ -86,6 +86,10 @@ public class TV {
     public Marca getMarca() {
         return marca;
     }
+    
+    public Marca setMarca(Marca marca) {
+        return marca;
+    }
 
     public static void setNumTV(int numTV) {
         TV.numTV = numTV;
