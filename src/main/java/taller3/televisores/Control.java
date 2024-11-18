@@ -60,7 +60,8 @@ public class Control {
         return tv;
     }
 
-    public TV setTv(TV tv) {
-        return tv;
+    public void setTv(TV tv) {
+        this.tv = tv;
     }
+
 }
