@@ -78,29 +78,15 @@ public class TV {
         System.out.println("El televisor esta encendido");
     }
 
-    public void canalUp(){
-        if (estado){
-            if (canal <= 120){
-                canal++;
-                System.out.println("Has subido de canal a: " + canal);
-            } else {
-                System.out.println("El canal esta en el maximo");
-            }
-        } else {
-            System.out.println("El televisor esta apagado");
+    public void canalUp() {
+        if (estado && canal < 120) { 
+            canal++;
         }
     }
-
-    public void canalDown(){
-        if (estado){
-            if (canal >= 1){
-                canal--;
-                System.out.println("Has bajado de canal a: " + canal);
-            } else{
-                System.out.println("El canal esta en el minimo");
-            }
-        } else {
-            System.out.println("El televisor esta apagado");
+    
+    public void canalDown() {
+        if (estado && canal > 1) { 
+            canal--;
         }
     }
     
