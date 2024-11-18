@@ -1,65 +1,62 @@
 package taller3.televisores;
 
 public class Control {
-    public TV tv;
-    
-    public Control(){
-        this.tv = null;
-    }
+    public  TV tv;
 
-    public void setTv(TV tv){
+    public void enlazar(TV tv) {
         this.tv = tv;
+        tv.setControl(this);
     }
 
-    public TV getTv(){
-        return tv;
-    }
-
-    public void enlazar(TV televisor){
-        this.tv = televisor;
-        televisor.setControl(this);
-        System.out.println("El control remoto se ha enlazado con el televisor.");
-    }
-
-    public void setCanal(int canal){
-        tv.setCanal(canal);
-    }
-
-    public void setVolumen(int volumen){
-        tv.setVolumen(volumen);
-    }
-
-    public void turnOff(){
-        tv.turnOff();
-    }
-
-    public void turnOn(){
-        tv.turnOn();
-    }
-
-
-    public void volumenUp(){
-        tv.volumenUp();
-    }
-
-    public void volumenDown(){
-        tv.volumenDown();
+    public void setCanal(int canal) {
+        if (tv != null) {
+            tv.setCanal(canal);
+        }
     }
 
     public void canalUp() {
-        if (tv != null && tv.getEstado()) {
-            tv.canalUp(); 
-        } else {
-            System.out.println("El televisor no está encendido o no está enlazado.");
+        if (tv != null) {
+            tv.canalUp();
         }
     }
-    
+
     public void canalDown() {
-        if (tv != null && tv.getEstado()) {
-            tv.canalDown(); 
-        } else {
-            System.out.println("El televisor no está encendido o no está enlazado.");
+        if (tv != null) {
+            tv.canalDown();
         }
     }
-    
+
+    public void setVolumen(int volumen) {
+        if (tv != null) {
+            tv.setVolumen(volumen);
+        }
+    }
+
+    public void volumenUp() {
+        if (tv != null) {
+            tv.volumenUp();
+        }
+    }
+
+    public void volumenDown() {
+        if (tv != null) {
+            tv.volumenDown();
+        }
+    }
+
+    public void turnOn() {
+        if (tv != null) {
+            tv.turnOn();
+        }
+    }
+
+    public void turnOff() {
+        if (tv != null) {
+            tv.turnOff();
+        }
+    }
+
+    public TV getTv() {
+        return tv;
+    }
 }
